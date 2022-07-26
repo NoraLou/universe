@@ -12,7 +12,6 @@ const PostFeed = ({handlePostSelection}) => {
 
   async function requestPosts() {
     let url = '';
-
     if (userId) {
       url = `https://jsonplaceholder.typicode.com/posts?userId=${userId}`;
     } else {
