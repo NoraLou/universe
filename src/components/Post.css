@@ -1,0 +1,10 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.post .wrapper {
+  padding: 1rem;
+}

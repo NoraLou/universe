@@ -3,8 +3,13 @@ import PostFeed from './views/PostFeed';
 
 function App() {
   return (
-    <div className="App">
-      <PostFeed />
+    <div>
+      <header>
+        <nav>Universe React</nav>
+      </header>
+      <main>
+        <PostFeed />
+      </main>
     </div>
   );
 }
