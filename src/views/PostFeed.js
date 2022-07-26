@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Results from '../components/Results';
 
-const PostsFeed = () => {
+const PostFeed = ({handlePostSelection}) => {
   const [posts, updatePosts] = useState([]);
 
   useEffect(() => {
@@ -19,9 +19,9 @@ const PostsFeed = () => {
 
   return (
     <div className="posts-feed">
-      <Results posts={posts} />
+      <Results handlePostSelection={handlePostSelection} posts={posts} />
     </div>
   )
 }
 
-export default PostsFeed;
+export default PostFeed;

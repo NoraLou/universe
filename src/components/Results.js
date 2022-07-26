@@ -1,6 +1,6 @@
 import Post from './Post';
 
-const Results = ({ posts }) => {
+const Results = ({ posts, handlePostSelection }) => {
   return(
     <div>
       { !posts.length ? (
@@ -13,6 +13,7 @@ const Results = ({ posts }) => {
             id={post.id}
             title={post.title}
             body={post.body}
+            handlePostSelection={handlePostSelection}
           />
         ))
       )}
