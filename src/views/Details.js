@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import './Details.css';
 
 const Details = ({selectedPost}) => {
-  // const [loading, setLoading] = useState(true);
   const [postComments, setComments] = useState([]);
   const { id } = useParams();
+  const { userId } = selectedPost
 
   useEffect(() => {
     requestPostComments();
@@ -26,7 +26,7 @@ const Details = ({selectedPost}) => {
         <div className="content">
           <div className="header">
             <h3>{selectedPost.title}</h3>
-            <Link to={``} className="details-btn"> More </Link>
+            <Link to={`/${userId}`} className="details-btn">More</Link>
           </div>
           {selectedPost.body}
         </div>

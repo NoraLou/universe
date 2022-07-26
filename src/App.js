@@ -9,12 +9,15 @@ function App() {
   return (
     <BrowserRouter>
       <header>
-        <nav><Link to="/">Universe React</Link></nav>
+        <nav><Link to="/"><h1>Universe React</h1></Link></nav>
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<PostFeed handlePostSelection={setSelectedPost}/>} />
-          <Route path="/details/:id" element={<Details selectedPost={selectedPost}/>} />
+          <Route path="/">
+            <Route index element={<PostFeed handlePostSelection = {setSelectedPost}/>}/>
+            <Route path=":userId" element={<PostFeed handlePostSelection = {setSelectedPost}/>}/>
+          </Route>
+          <Route path="/details/:id" element={<Details selectedPost={selectedPost} />} />
         </Routes>
       </main>
     </BrowserRouter>

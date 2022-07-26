@@ -8,3 +8,8 @@ nav {
 header {
   background-color: var(--dark-bg-color);
 }
+
+header a:focus > h1 {
+  color: var(--link-hover-color);
+}
+

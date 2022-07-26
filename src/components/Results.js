@@ -4,7 +4,7 @@ const Results = ({ posts, handlePostSelection }) => {
   return(
     <div>
       { !posts.length ? (
-        <h1>No Posts Found</h1>
+        <h2>No Posts Found</h2>
       ) : (
         posts.map((post) => (
           <Post

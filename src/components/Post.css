@@ -5,6 +5,16 @@
   margin-bottom: 1rem;
 }
 
+.post:hover {
+  color: var(--link-hover-color);
+  border: solid 1px var(--link-hover-color);
+}
+
 .post .wrapper {
   padding: 1rem;
+}
+
+.post .wrapper > div {
+  display: flex;
+  justify-content: space-between;
 }
