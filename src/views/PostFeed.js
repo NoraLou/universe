@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Results from '../components/Results';
 
 const PostsFeed = () => {
   const [posts, updatePosts] = useState([]);
@@ -18,11 +19,7 @@ const PostsFeed = () => {
 
   return (
     <div className="posts-feed">
-      { posts && posts.map((post)=> (
-        <div key={post.id}>
-          <p>{post.title}</p>
-        </div>
-      ))}
+      <Results posts={posts} />
     </div>
   )
 }
