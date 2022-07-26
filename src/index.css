@@ -3,6 +3,7 @@
   --main-txt-color: #e9ecef;
   --dark-bg-color: #212529;
   --border-color: #4b5056;
+  --link-hover-color: #6ab0f3;
 }
 
 * {
@@ -36,7 +37,8 @@ h3 {
   font-size: 1.25rem;
 }
 
-p {
+p,
+span {
   margin-bottom: 1rem;
   margin-top: 0;
 }

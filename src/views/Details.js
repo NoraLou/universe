@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import './Details.css';
 
@@ -16,7 +16,6 @@ const Details = ({selectedPost}) => {
       `https://jsonplaceholder.typicode.com/posts/${id}/comments`
     );
     const data = await res.json();
-    console.log('data :', data)
     setComments(data);
   }
 
@@ -24,23 +23,32 @@ const Details = ({selectedPost}) => {
     <div>
       <h2>Post Details</h2>
       <div className="details">
-       <div className="details-header">
-          <h3>{selectedPost.title}</h3>
-          {/* <Link to={``} className="details-btn"> More By this User</Link> */}
-       </div>
-       {selectedPost.body}
-      </div>
-      {/* { postComments && postComments.map((comment) => (
-        <div key={comment.id}>
-          <p>Name{comment.name}</p>
-          <p>Name{comment.email}</p>
-          <p>Name{comment.body}</p>
+        <div className="content">
+          <div className="header">
+            <h3>{selectedPost.title}</h3>
+            <Link to={``} className="details-btn"> More </Link>
+          </div>
+          {selectedPost.body}
         </div>
-      ))} */}
+        <div className="comments">
+          { !postComments.length ? (
+            <h4>No Comments on this Post</h4>
+          ) : (
+            <div>
+              <h4>{postComments.length} Comments:</h4>
+               { postComments.map((comment) => (
+                  <div key={comment.id} className="comment">
+                    <span>{comment.name}</span>
+                    <span>{comment.email}</span>
+                    <p>Name{comment.body}</p>
+                  </div>
+                ))}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   )
-
-
 }
 
 export default Details;
