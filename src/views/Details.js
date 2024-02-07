@@ -17,6 +17,7 @@ const Details = ({selectedPost}) => {
     );
     const data = await res.json();
     console.log(`data ${data}`);
+    console.log(`data ${data}`);
     setComments(data);
   }
 
